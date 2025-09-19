@@ -1,22 +1,4 @@
-def Sumar(a, b):
-    suma = a + b
-    return suma
-
-def Restar(a, b):
-    resta = a - b
-    return resta
-
-def Dividir(a, b):
-    try: 
-        division = a / b
-        return division
-    except ZeroDivisionError as e: 
-        print(f"Error: {e}")
-
-def Multiplicar(a, b):
-    multiplicacion = a * b
-    return multiplicacion
-
+import operaciones 
 
 def calculadoraModular(): 
         try:
@@ -35,17 +17,18 @@ def calculadoraModular():
         esResta = operacion == "-"
         esDivision = operacion == "/"
         esMultiplicacion = operacion == "*"
+        
         if esSuma == True:
-            resultado = Sumar(num1, num2)
+            resultado = operaciones.Sumar(num1, num2)
             print(f"El resultado es: {resultado}")
         elif esResta == True:
-            resultado = Restar(num1, num2)
+            resultado = operaciones.Restar(num1, num2)
             print(f"El resultado es: {resultado}")
         elif esDivision == True:
-            resultado = Dividir(num1, num2)
+            resultado = operaciones.Dividir(num1, num2)
             print(f"El resultado es: {resultado}")
         elif esMultiplicacion == True:
-            resultado = Multiplicar(num1, num2)
+            resultado = operaciones.Multiplicar(num1, num2)
             print(f"El resultado es: {resultado}")
         else:
             print(f"Ha ingresado una operación no válida, por favor vuelva a intentarlo")
