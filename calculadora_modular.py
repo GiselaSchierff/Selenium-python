@@ -1,6 +1,6 @@
 import operaciones 
 
-def calculadoraModular(): 
+def calculadora_modular(): 
         try:
             num1 = float(input("Ingrese el primer número: "))
         except ValueError as e: 
@@ -13,26 +13,26 @@ def calculadoraModular():
 
         operacion = input("Ingrese la operación a realizar: ")
 
-        esSuma = operacion == "+"
-        esResta = operacion == "-"
-        esDivision = operacion == "/"
-        esMultiplicacion = operacion == "*"
+        es_suma = operacion == "+"
+        es_resta = operacion == "-"
+        es_division = operacion == "/"
+        es_multiplicacion = operacion == "*"
         
-        if esSuma == True:
+        if es_suma:
             resultado = operaciones.Sumar(num1, num2)
-            print(f"El resultado es: {resultado}")
-        elif esResta == True:
+            return f"El resultado es: {resultado}"
+        elif es_resta:
             resultado = operaciones.Restar(num1, num2)
-            print(f"El resultado es: {resultado}")
-        elif esDivision == True:
+            return f"El resultado es: {resultado}"
+        elif es_division:
             resultado = operaciones.Dividir(num1, num2)
-            print(f"El resultado es: {resultado}")
-        elif esMultiplicacion == True:
+            return f"El resultado es: {resultado}"
+        elif es_multiplicacion:
             resultado = operaciones.Multiplicar(num1, num2)
-            print(f"El resultado es: {resultado}")
+            return f"El resultado es: {resultado}"
         else:
-            print(f"Ha ingresado una operación no válida, por favor vuelva a intentarlo")
+            return f"Ha ingresado una operación no válida, por favor vuelva a intentarlo"
 
 
 if __name__ == "__main__": 
-    calculadoraModular()
+    calculadora_modular()

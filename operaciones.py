@@ -1,18 +1,19 @@
-def Sumar(a, b):
+def sumar(a, b):
     suma = a + b
     return suma
 
-def Restar(a, b):
+def restar(a, b):
     resta = a - b
     return resta
 
-def Dividir(a, b):
-    try: 
+def dividir(a, b):
         division = a / b
+        if b == 0:
+             raise ZeroDivisionError("Error al dividir por cero") 
         return division
-    except ZeroDivisionError as e: 
-        print(f"Error: {e}")
 
-def Multiplicar(a, b):
+        
+
+def multiplicar(a, b):
     multiplicacion = a * b
     return multiplicacion
