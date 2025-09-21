@@ -1,4 +1,4 @@
-import operaciones as operacion # VER SI ESTO FUNCIONA 
+import operaciones as operacion 
 
 import pytest
 
@@ -6,6 +6,7 @@ import pytest
 def test_suma():
     assert operacion.sumar(1,2) == 3
 
+@pytest.mark.exception
 def test_division_por_cero():
     with pytest.raises(ZeroDivisionError):
         operacion.dividir(10,0)
@@ -18,10 +19,22 @@ def test_division_por_cero():
 def test_suma_parametrize(a, b, esperado):
     assert operacion.sumar(a, b) == esperado 
 
-def test_resta_con_fixture(numeros): 
-    a, b = numeros
+def test_resta_con_fixture(numeros_enteros): 
+    a, b = numeros_enteros
     assert operacion.restar(a, b) == -1
 
-def test_suma_con_fixture(numeros): 
-    a, b = numeros
-    assert operacion.sumar(a,b) == 7
+def test_multiplicacion_con_fixture(numeros_enteros): 
+    a, b = numeros_enteros
+    assert operacion.multiplicar(a,b) == 12
+
+def test_division_simple():
+    assert operacion.dividir(6,2) == 3
+
+def test_multiplicacion_simple(): 
+    assert operacion.multiplicar(6,3) == 18
+
+
+@pytest.mark.smoke
+def test_suma_con_fixture(numeros_decimales): 
+    a, b = numeros_decimales
+    assert operacion.sumar(a, b) == pytest.approx(.3, rel=1e-4)
