@@ -9,7 +9,7 @@ def restar(a, b):
 def dividir(a, b):
         division = a / b
         if b == 0:
-             raise ZeroDivisionError("Error al dividir por cero") 
+            raise ZeroDivisionError("Error al dividir por cero") 
         return division
 
         

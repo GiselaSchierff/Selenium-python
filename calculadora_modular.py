@@ -33,6 +33,7 @@ def calculadora_modular():
         else:
             return f"Ha ingresado una operación no válida, por favor vuelva a intentarlo"
 
+# agregar error al dividir por cero? ver guia 4
 
 if __name__ == "__main__": 
     calculadora_modular()
