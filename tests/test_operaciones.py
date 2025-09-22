@@ -8,7 +8,7 @@ def test_suma():
 
 @pytest.mark.exception
 def test_division_por_cero():
-    with pytest.raises(ZeroDivisionError):
+    with pytest.raises(ValueError): # ZeroDivisionError
         operacion.dividir(10,0)
 
 @pytest.mark.parametrize("a, b, esperado",
@@ -33,8 +33,7 @@ def test_division_simple():
 def test_multiplicacion_simple(): 
     assert operacion.multiplicar(6,3) == 18
 
-
 @pytest.mark.smoke
 def test_suma_con_fixture(numeros_decimales): 
     a, b = numeros_decimales
-    assert operacion.sumar(a, b) == pytest.approx(.3, rel=1e-4)
+    assert operacion.sumar(a, b) == .3 # pytest.approx(.3, rel=1e-4)
